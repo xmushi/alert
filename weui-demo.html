@@ -19,6 +19,8 @@
 		<a href="javascript:;" class="weui-btn weui-btn_plain-default">⑥confirm - msg+callback</a>
 		<a href="javascript:;" class="weui-btn weui-btn_plain-default">⑦confirm - title+msg</a>
 		<a href="javascript:;" class="weui-btn weui-btn_plain-default">⑧confirm - msg</a>
+		<a href="javascript:;" class="weui-btn weui-btn_plain-default">⑨msg+callback+ok+cancel</a>
+		<a href="javascript:;" class="weui-btn weui-btn_plain-default">⑩title+msg+ok</a>
 	</div>
 	<script>
 	$(function(){
@@ -47,6 +49,12 @@
 				break;
 				case 7:
 					$.confirm('你的自定义对话框内容！！！')
+				break;
+				case 8:
+					$.confirm('你的自定义对话框内容！！！',function(r){$.alert('你点击了'+(r?'ok':'cancel'),'ok')},'这是OK','这是Cancel')
+				break;
+				case 9:
+					$.alert('看按钮','没有回调，只改按钮','hahaha')
 				break;
 			}
 		})
