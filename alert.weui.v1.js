@@ -24,8 +24,11 @@
 				cancel = typeof ok =='string'?ok:'取消';
 				ok = callback;
 				callback=null;
+			}else{
+				ok = ok ||'确定'；
+				cancel = cancel||'取消'
 			}
-			var d = $('<div class="weui-mask"></div><div class="weui-dialog '+(/android/i.test(navigator.userAgent)&&'weui-skin_android')+'"><div class="weui-dialog__hd"><strong class="weui-dialog__title">'+title+'</strong></div><div class="weui-dialog__bd">'+msg+'</div><div class="weui-dialog__ft"><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" data-r="0">取消</a><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" data-r="1">确定</a></div></div>')
+			var d = $('<div class="weui-mask"></div><div class="weui-dialog '+(/android/i.test(navigator.userAgent)&&'weui-skin_android')+'"><div class="weui-dialog__hd"><strong class="weui-dialog__title">'+title+'</strong></div><div class="weui-dialog__bd">'+msg+'</div><div class="weui-dialog__ft"><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" data-r="0">'+cancel+'</a><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" data-r="1">'+ok+'</a></div></div>')
 			$._isalert&&d.find('.weui-dialog__btn_default').remove();
 			d.on('contextmenu',!1)
 			.on('click','.weui-dialog__btn',function(){
