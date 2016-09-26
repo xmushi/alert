@@ -27,10 +27,10 @@
 		$('.weui-btn').on('click',function(){
 			switch($(this).index()){
 				case 0:
-					$.alert('你的自定义标题','你的自定义对话框内容！！！',function(){$.alert('这是点击后的回调函数')})
+					$.alert('你的自定义标题','你的自定义对话框内容！！！',function(){$.alert('回调函数','这是点击后的回调函数')})
 				break;
 				case 1:
-					$.alert('你的自定义对话框内容！！！',function(){$.alert('这是点击后的回调函数')})
+					$.alert('你的自定义对话框内容！！！',function(){$.alert('回调函数','这是点击后的回调函数')})
 				break;
 				case 2:
 					$.alert('你的自定义标题','你的自定义对话框内容！！！')
@@ -39,7 +39,7 @@
 					$.alert('你的自定义对话框内容！！！')
 				break;
 				case 4:
-					$.confirm('你的自定义标题','你的自定义对话框内容！！！',function(e){$.alert('这是点击后的回调函数<br>你点击了 '+(e?'确定':'取消')+' 按钮')})
+					$.confirm('你的自定义标题','你的自定义对话框内容！！！',function(e){$.alert('回调函数','这是点击后的回调函数<br>你点击了 '+(e?'确定':'取消')+' 按钮')})
 				break;
 				case 5:
 					$.confirm('你的自定义对话框内容！！！',function(e){$.alert('这是点击后的回调函数<br>你点击了 '+(e?'确定':'取消')+' 按钮')})
@@ -51,7 +51,7 @@
 					$.confirm('你的自定义对话框内容！！！')
 				break;
 				case 8:
-					$.confirm('你的自定义对话框内容！！！',function(r){$.alert('你点击了'+(r?'ok':'cancel'),'ok')},'这是OK','这是Cancel')
+					$.confirm('你的自定义对话框内容！！！',function(r){$.alert('回调函数','你点击了'+(r?'ok':'cancel'),'ok')},'这是OK','这是Cancel')
 				break;
 				case 9:
 					$.alert('看按钮','没有回调，只改按钮','hahaha')
