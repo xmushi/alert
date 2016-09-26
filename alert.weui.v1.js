@@ -20,7 +20,7 @@
 				cancel = typeof ok =='string'?ok:'取消';
 				ok = typeof callback =='string'?callback:'确定'
 				callback =msg;msg = title||'';title = '信息提示';
-			}else if(arguments.length<=4&&type of callback == 'string'){
+			}else if(arguments.length<=4&&typeof callback == 'string'){
 				cancel = typeof ok =='string'?ok:'取消';
 				ok = callback;
 				callback=null;
