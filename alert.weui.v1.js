@@ -1,8 +1,9 @@
 /**
 *    jquery、zepto 手机weui1.0+弹窗插件
 *    调用方法（中括号的为可选参数）：
-*    $.alert([title,]msg[,function])
-*    $.confirm([title,]msg[,function])
+*    $.alert([title,]msg[,function][,ok][,cancel])
+*    $.confirm([title,]msg[,function][,ok][,cancel])
+*    参数列表：标题（可空）、消息、回调函数（可空）、确定按钮文字（可空）、取消按钮文字（可空）
 *    version:2016-09-26
 */
 !function ($) {
@@ -19,6 +20,10 @@
 				cancel = typeof ok =='string'?ok:'取消';
 				ok = typeof callback =='string'?callback:'确定'
 				callback =msg;msg = title||'';title = '信息提示';
+			}else if(arguments.length<=4&&type of callback == 'string'){
+				cancel = typeof ok =='string'?ok:'取消';
+				ok = callback;
+				callback=null;
 			}
 			var d = $('<div class="weui-mask"></div><div class="weui-dialog '+(/android/i.test(navigator.userAgent)&&'weui-skin_android')+'"><div class="weui-dialog__hd"><strong class="weui-dialog__title">'+title+'</strong></div><div class="weui-dialog__bd">'+msg+'</div><div class="weui-dialog__ft"><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" data-r="0">取消</a><a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" data-r="1">确定</a></div></div>')
 			$._isalert&&d.find('.weui-dialog__btn_default').remove();
